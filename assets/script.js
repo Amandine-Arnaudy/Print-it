@@ -50,6 +50,9 @@ function myFunction() {
 
 arrowLeft.addEventListener("click", function () {
 	slideIndex--; //diapositive précédente 
+	if (slideIndex < 0) {
+		slideIndex = slides.length - 1;
+	} // infini scroll
 	bannerImage.src = "./assets/images/slideshow/" + slides[slideIndex].image; // màj image
 	bannerTagLine.innerHTML = slides[slideIndex].tagLine; // màj texte
 	myFunction(); // fonction bullet point
@@ -59,6 +62,9 @@ arrowLeft.addEventListener("click", function () {
 
 arrowRight.addEventListener("click", function () {
 	slideIndex++; // diapositive suivante
+	if (slideIndex >= slides.length) {
+		slideIndex = 0;
+	} // infini scroll
 	bannerImage.src = "./assets/images/slideshow/" + slides[slideIndex].image; // màj image
 	bannerTagLine.innerHTML = slides[slideIndex].tagLine; // màj texte
 	myFunction(); // fonction bullet point
