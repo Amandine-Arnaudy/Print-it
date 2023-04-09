@@ -41,7 +41,6 @@ for (let i = 0; i < 3; i++) {
 	dotContainer.appendChild(dot);
 }
 
-
 function dotSelected() {
 	for (let i = 0; i < dots.length; i++) {
 		if (i === slideIndex) {
