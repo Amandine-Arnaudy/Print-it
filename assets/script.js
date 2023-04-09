@@ -33,9 +33,16 @@ const bannerTagLine = banner.children.item(1);
 const dotContainer = document.querySelector(".dots");
 const dots = dotContainer.children;
 
-// Fonction bullet points
+// bullet points
 
-function myFunction() {
+for (let i = 0; i < 3; i++) {
+	const dot = document.createElement('div');
+	dot.classList.add('dot');
+	dotContainer.appendChild(dot);
+}
+
+
+function dotSelected() {
 	for (let i = 0; i < dots.length; i++) {
 		if (i === slideIndex) {
 			dots[i].classList.add("dot_selected");
@@ -55,7 +62,7 @@ arrowLeft.addEventListener("click", function () {
 	} // infini scroll
 	bannerImage.src = "./assets/images/slideshow/" + slides[slideIndex].image; // màj image
 	bannerTagLine.innerHTML = slides[slideIndex].tagLine; // màj texte
-	myFunction(); // fonction bullet point
+	dotSelected(); // fonction bullet point
 });
 
 // Clic droit
@@ -67,7 +74,7 @@ arrowRight.addEventListener("click", function () {
 	} // infini scroll
 	bannerImage.src = "./assets/images/slideshow/" + slides[slideIndex].image; // màj image
 	bannerTagLine.innerHTML = slides[slideIndex].tagLine; // màj texte
-	myFunction(); // fonction bullet point
+	dotSelected(); // fonction bullet point
 });
 
 console.log(banner.children.item)
