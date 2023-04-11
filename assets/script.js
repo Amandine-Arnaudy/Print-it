@@ -35,7 +35,7 @@ const dots = dotContainer.children;
 
 // bullet points
 
-for (let i = 0; i < 3; i++) {
+for (let i = 1; i < slides.length; i++) {
 	const dot = document.createElement('div');
 	dot.classList.add('dot');
 	dotContainer.appendChild(dot);
